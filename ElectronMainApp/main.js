@@ -288,6 +288,8 @@ const checkIsInApplicationsFolder = () => {
                 log.info('Force quit application');
                 app.exit();
             }
+        }).catch((error) => {
+            log.error(`Error moving AdGuard for Safari to Application folder: ${error.message}`);
         });
     }
 };
