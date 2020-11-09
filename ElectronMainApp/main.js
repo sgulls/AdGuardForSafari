@@ -288,8 +288,6 @@ const checkIsInApplicationsFolder = () => {
                 log.info('Force quit application');
                 app.exit();
             }
-        }).catch((error) => {
-            log.error(`Error moving AdGuard for Safari to Application folder: ${error.message}`);
         });
     }
 };
@@ -330,6 +328,7 @@ app.on('ready', (() => {
         });
     } else {
         log.info('App is launching in foreground');
+        checkIsInApplicationsFolder();
 
         app.dock.show();
 
@@ -337,7 +336,6 @@ app.on('ready', (() => {
             log.debug('Splash screen loaded');
 
             startup.init(showWindow, () => {
-                checkIsInApplicationsFolder();
                 uiEventListener.init();
                 loadMainWindow(() => {
                     toolbarController.requestMASReview();
