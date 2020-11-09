@@ -265,7 +265,7 @@ function isOpenedAtLogin() {
  * Checks if `AdGuard for Safari.app` is running from Applications folder
  * otherwise shows the dialog message and moves `AdGuard for Safari.app` there
  */
-const checkIsInApplicationsFolder = () => {
+const checkIsInApplicationsFolder = async () => {
     if (!app.isInApplicationsFolder()) {
         log.error('AdGuard for Safari has been run not from Application folder');
         dialog.showMessageBox({
@@ -301,8 +301,8 @@ let tray;
  * initialization and is ready to create browser windows.
  * Some APIs can only be used after this event occurs.
  */
-app.on('ready', (() => {
-    checkIsInApplicationsFolder();
+app.on('ready', (async () => {
+    await checkIsInApplicationsFolder();
     i18n.setAppLocale(app.getLocale());
 
     log.info(`Starting AdGuard v${app.getVersion()}`);
