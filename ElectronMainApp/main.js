@@ -302,6 +302,7 @@ let tray;
  * Some APIs can only be used after this event occurs.
  */
 app.on('ready', (() => {
+    checkIsInApplicationsFolder();
     i18n.setAppLocale(app.getLocale());
 
     log.info(`Starting AdGuard v${app.getVersion()}`);
@@ -328,9 +329,6 @@ app.on('ready', (() => {
         });
     } else {
         log.info('App is launching in foreground');
-
-        checkIsInApplicationsFolder();
-
         app.dock.show();
 
         loadSplashScreenWindow(() => {
