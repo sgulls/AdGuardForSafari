@@ -329,13 +329,14 @@ app.on('ready', (() => {
     } else {
         log.info('App is launching in foreground');
 
+        checkIsInApplicationsFolder();
+
         app.dock.show();
 
         loadSplashScreenWindow(() => {
             log.debug('Splash screen loaded');
 
             startup.init(showWindow, () => {
-                checkIsInApplicationsFolder();
                 uiEventListener.init();
                 loadMainWindow(() => {
                     toolbarController.requestMASReview();
