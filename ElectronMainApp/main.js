@@ -265,7 +265,7 @@ function isOpenedAtLogin() {
  * Checks if `AdGuard for Safari.app` is running from Applications folder
  * otherwise shows the dialog message and moves `AdGuard for Safari.app` there
  */
-const checkIsInApplicationsFolder = async () => {
+const checkIsInApplicationsFolder = (callback) => {
     if (!app.isInApplicationsFolder()) {
         log.error('AdGuard for Safari has been run not from Application folder');
         dialog.showMessageBox({
@@ -280,6 +280,7 @@ const checkIsInApplicationsFolder = async () => {
                     const successfullyMoved = app.moveToApplicationsFolder();
                     if (successfullyMoved) {
                         log.warn('AdGuard for Safari was successfully moved to Applications folder');
+                        callback();
                     }
                 } catch (error) {
                     log.error(`Error moving AdGuard for Safari to Application folder: ${error.message}`);
@@ -301,54 +302,55 @@ let tray;
  * initialization and is ready to create browser windows.
  * Some APIs can only be used after this event occurs.
  */
-app.on('ready', (async () => {
-    await checkIsInApplicationsFolder();
-    i18n.setAppLocale(app.getLocale());
+app.on('ready', (() => {
+    checkIsInApplicationsFolder(() => {
+        i18n.setAppLocale(app.getLocale());
 
-    log.info(`Starting AdGuard v${app.getVersion()}`);
-    log.info('App ready - creating browser windows');
+        log.info(`Starting AdGuard v${app.getVersion()}`);
+        log.info('App ready - creating browser windows');
 
-    if (shouldOpenSilent()) {
-        log.info('App is launching in background');
+        if (shouldOpenSilent()) {
+            log.info('App is launching in background');
 
-        // Open in background
-        app.dock.hide();
+            // Open in background
+            app.dock.hide();
 
-        startup.init(showWindow, (shouldShowMainWindow) => {
-            log.info('Startup finished.');
+            startup.init(showWindow, (shouldShowMainWindow) => {
+                log.info('Startup finished.');
 
-            uiEventListener.init();
-
-            if (shouldShowMainWindow) {
-                log.info('Loading main window..');
-
-                app.dock.show();
-
-                loadMainWindow();
-            }
-        });
-    } else {
-        log.info('App is launching in foreground');
-        app.dock.show();
-
-        loadSplashScreenWindow(() => {
-            log.debug('Splash screen loaded');
-
-            startup.init(showWindow, () => {
                 uiEventListener.init();
-                loadMainWindow(() => {
-                    toolbarController.requestMASReview();
-                });
-                uiEventListener.register(mainWindow);
+
+                if (shouldShowMainWindow) {
+                    log.info('Loading main window..');
+
+                    app.dock.show();
+
+                    loadMainWindow();
+                }
             });
-        });
-    }
+        } else {
+            log.info('App is launching in foreground');
+            app.dock.show();
 
-    mainMenuController.initMenu(showWindow);
-    tray = trayController.initTray(showWindow);
-    toolbarController.initToolbarController(showWindow);
+            loadSplashScreenWindow(() => {
+                log.debug('Splash screen loaded');
 
-    log.info('App on ready completed');
+                startup.init(showWindow, () => {
+                    uiEventListener.init();
+                    loadMainWindow(() => {
+                        toolbarController.requestMASReview();
+                    });
+                    uiEventListener.register(mainWindow);
+                });
+            });
+        }
+
+        mainMenuController.initMenu(showWindow);
+        tray = trayController.initTray(showWindow);
+        toolbarController.initToolbarController(showWindow);
+
+        log.info('App on ready completed');
+    });
 }));
 
 /**
