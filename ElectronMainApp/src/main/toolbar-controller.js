@@ -134,6 +134,16 @@ module.exports = (() => {
      */
     const setContentBlockingJson = (bundleId, jsonString, info) => {
         log.debug(`Content-blocker updating ${bundleId}`);
+
+        // TODO: Remove hardcoded json!
+        // eslint-disable-next-line global-require
+        const appPack = require('../utils/app-pack');
+        const jsonPath = appPack.resourcePath('./blocking-content-rules.json');
+        log.info(`Hardcoded json path: ${jsonPath}`);
+        // eslint-disable-next-line global-require
+        jsonString = require('fs').readFileSync(jsonPath, { encoding: 'utf8' });
+        log.info(`Hardcoded json length: ${jsonString.length}`);
+
         safariToolbar.setContentBlockingJson(bundleId, jsonString, (result) => {
             log.info(`Content-blocker ${bundleId} set result : ${result}`);
 
