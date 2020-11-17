@@ -5,6 +5,7 @@ const {
     dialog,
     nativeTheme,
     nativeImage,
+    Notification,
 } = require('electron');
 
 const appPack = require('./src/utils/app-pack');
@@ -24,6 +25,8 @@ const toolbarController = require('./src/main/toolbar-controller');
 const mainMenuController = require('./src/main/main-menu.controller');
 const settings = require('./src/main/app/settings-manager');
 const { getChannel } = require('./src/main/app/app');
+
+const MACOS_MOJAVE_VERSION = '10.14.0';
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -381,11 +384,19 @@ app.on('before-quit', () => {
  * On app activate
  */
 app.on('activate', () => {
-    log.info('On app activate');
     // On OS X it's common to re-create a window in the app when the
     // dock icon is clicked and there are no other windows open.
     if (mainWindow === null) {
         loadMainWindow();
         uiEventListener.register(mainWindow);
+    }
+});
+
+process.once('loaded', () => {
+    const osVersion = process.getSystemVersion();
+
+    if (osVersion && osVersion < MACOS_MOJAVE_VERSION) {
+        log.warn(`Mac OS version ${osVersion} is not supported. Force quit application.`);
+        app.exit();
     }
 });
