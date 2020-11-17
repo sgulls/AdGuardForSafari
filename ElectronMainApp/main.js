@@ -5,7 +5,6 @@ const {
     dialog,
     nativeTheme,
     nativeImage,
-    Notification,
 } = require('electron');
 
 const appPack = require('./src/utils/app-pack');
