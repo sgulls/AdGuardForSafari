@@ -25,8 +25,6 @@ const mainMenuController = require('./src/main/main-menu.controller');
 const settings = require('./src/main/app/settings-manager');
 const { getChannel } = require('./src/main/app/app');
 
-const MACOS_MOJAVE_VERSION = '10.14.0';
-
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow;
@@ -389,14 +387,5 @@ app.on('activate', () => {
     if (mainWindow === null) {
         loadMainWindow();
         uiEventListener.register(mainWindow);
-    }
-});
-
-process.once('loaded', () => {
-    const osVersion = process.getSystemVersion();
-
-    if (osVersion && osVersion < MACOS_MOJAVE_VERSION) {
-        log.warn(`Mac OS version ${osVersion} is not supported. Force quit application.`);
-        app.exit();
     }
 });
