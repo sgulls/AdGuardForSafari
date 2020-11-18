@@ -2644,7 +2644,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "AdvancedBlocking/AdGuard-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.1;
 			};
 			name = Debug;
 		};
@@ -2670,7 +2670,7 @@
 				PRODUCT_NAME = "$(AG_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "AdvancedBlocking/AdGuard-Bridging-Header.h";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.1;
 			};
 			name = Release;
 		};
@@ -3217,7 +3217,7 @@
 				PRODUCT_NAME = "$(AG_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "AdvancedBlocking/AdGuard-Bridging-Header.h";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.1;
 			};
 			name = "Standalone Beta";
 		};
@@ -3438,7 +3438,7 @@
 				PRODUCT_NAME = "$(AG_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "AdvancedBlocking/AdGuard-Bridging-Header.h";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.1;
 			};
 			name = "Standalone Prod";
 		};
