@@ -41,6 +41,12 @@
     "options_support_feedback_description": {
         "message": "Submit feature requests and suggestions"
     },
+    "options_support_discuss_title": {
+        "message": "Discuss"
+    },
+    "options_support_discuss_description": {
+        "message": "Discuss on our forum, in social networks or on GitHub"
+    },
     "options_support_rate_title": {
         "message": "Rate the app"
     },
