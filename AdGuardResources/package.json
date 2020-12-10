@@ -1,0 +1,11 @@
+{
+  "name": "adguard-resources",
+  "version": "0.0.1",
+  "description": "AdGuard resources package",
+  "main": "index.js",
+  "dependencies": {
+    "assistant": "github:AdguardTeam/AdguardAssistant",
+    "scriptlets": "github:AdguardTeam/Scriptlets",
+    "extended-css": "github:AdguardTeam/ExtendedCss"
+  }
+}

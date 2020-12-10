@@ -12,6 +12,10 @@ nvm use v13.10.0 || exit 1
 PLATFORM=mas
 ARCH=x64
 
+# Install AdGuard resources
+cd ${SRCROOT}/../AdGuardResources
+yarn install
+
 SRC="${SRCROOT}/../ElectronMainApp"
 SHAREDSRC="${SRCROOT}/../Shared"
 
