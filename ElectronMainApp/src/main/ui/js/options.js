@@ -2398,3 +2398,9 @@ ipcRenderer.on('initializeOptionsPageResponse', (e, arg) => {
 ipcRenderer.send('renderer-to-main', JSON.stringify({
     'type': 'initializeOptionsPage',
 }));
+
+const faqWebview = document.getElementById('faq-webview');
+
+faqWebview.addEventListener('DOMContentLoaded', () => {
+    faqWebview.insertRule('html,body{ background-color: #323232 !important; color: #eeeeee; }', 1);
+});
