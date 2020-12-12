@@ -2382,6 +2382,18 @@ const initPage = function (response) {
 
         // Hide loading content
         document.getElementById('preloaderContainer').style.display = 'none';
+
+        // TODO remove css injecting into webview
+        const faqCss = 'body{ background: #323232 !important; color: #ccc !important; }'
+            + 'a{ color: #eee !important; }'
+            + '.header, .support__header, .support__sidebar, .sticky-bar, .footer{ display: none; }'
+            + '.support, .support__list { padding-bottom: 0 !important; }'
+            + '.support__link-title { color: #eee }';
+
+        const faqWebview = document.getElementById('faq-webview');
+        faqWebview.addEventListener('dom-ready', () => {
+            faqWebview.insertCSS(faqCss);
+        });
     };
 
     if (document.attachEvent ? document.readyState === 'complete' : document.readyState !== 'loading') {
@@ -2398,9 +2410,3 @@ ipcRenderer.on('initializeOptionsPageResponse', (e, arg) => {
 ipcRenderer.send('renderer-to-main', JSON.stringify({
     'type': 'initializeOptionsPage',
 }));
-
-const faqWebview = document.getElementById('faq-webview');
-
-faqWebview.addEventListener('DOMContentLoaded', () => {
-    faqWebview.insertRule('html,body{ background-color: #323232 !important; color: #eeeeee; }', 1);
-});
