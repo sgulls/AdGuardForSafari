@@ -9,12 +9,13 @@ echo "AG_STANDALONE_BETA: ${AG_STANDALONE_BETA}"
 . ~/.nvm/nvm.sh
 nvm use v13.10.0 || exit 1
 
-PLATFORM=mas
-ARCH=x64
-
-# Install AdGuard resources
+# download AdGuard resources
 cd ${SRCROOT}/../AdGuardResources
 yarn install
+cd ..
+
+PLATFORM=mas
+ARCH=x64
 
 SRC="${SRCROOT}/../ElectronMainApp"
 SHAREDSRC="${SRCROOT}/../Shared"
@@ -52,8 +53,6 @@ ELECTRON_VERSION=$(jq -r ".devDependencies.electron" ../ElectronMainApp/package.
 
 # Remove prefix "^"
 ELECTRON_VERSION=${ELECTRON_VERSION#"^"}
-
-echo "%%% USING ELECTRON VERSION ${ELECTRON_VERSION}"
 
 # Rebuild safari-ext and other node packages
 yarn electron-rebuild -v ${ELECTRON_VERSION}

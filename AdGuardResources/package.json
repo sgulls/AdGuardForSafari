@@ -3,9 +3,13 @@
   "version": "0.0.1",
   "description": "AdGuard resources package",
   "main": "index.js",
+  "scripts": {
+    "postinstall": "./manage-resources.sh"
+  },
   "dependencies": {
     "assistant": "github:AdguardTeam/AdguardAssistant",
     "scriptlets": "github:AdguardTeam/Scriptlets",
-    "extended-css": "github:AdguardTeam/ExtendedCss"
+    "extended-css": "github:AdguardTeam/ExtendedCss",
+    "safari-converter-lib": "github:AdguardTeam/SafariConverterLib"
   }
 }
