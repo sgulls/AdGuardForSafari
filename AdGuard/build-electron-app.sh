@@ -10,9 +10,7 @@ echo "AG_STANDALONE_BETA: ${AG_STANDALONE_BETA}"
 nvm use v13.10.0 || exit 1
 
 # download AdGuard resources
-cd ${SRCROOT}/../AdGuardResources
-yarn install
-cd ..
+yarn install --cwd "${SRCROOT}/../AdGuardResources"
 
 PLATFORM=mas
 ARCH=x64
@@ -22,16 +20,13 @@ SHAREDSRC="${SRCROOT}/../Shared"
 
 # Cleaning safari-ext
 if [[ ${ACTION} == "clean" ]]; then
-  cd "${SHAREDSRC}"
-  node-gyp clean || exit 1
+  node-gyp clean || exit 1 --cwd "${SHAREDSRC}"
   exit 0
 fi
 
 # Rebuild safari-ext
-cd "${SRC}/safari-ext"
-#node-gyp configure --verbose --debug|| exit 1
-#node-gyp rebuild --verbose|| exit 1
-#
+#node-gyp configure --verbose --debug|| exit 1 --cwd "${SRC}/safari-ext"
+#node-gyp rebuild --verbose|| exit 1 --cwd "${SRC}/safari-ext"
 
 mkdir -vp "${SRC}/safari-ext/shared"
 cp -v "${BUILT_PRODUCTS_DIR}/libshared.a" "${SRC}/safari-ext/shared/" || exit 1

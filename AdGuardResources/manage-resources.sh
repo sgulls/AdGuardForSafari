@@ -10,12 +10,12 @@ mkdir -p ../libs
 cp node_modules/safari-converter-lib/.build/debug/ConverterTool ../libs
 chmod +x ../libs/ConverterTool
 
-touch ../libs/ConverterTool.json
-
+# get SafariConverterLib version
 LIB_VERSION=$(curl -L "https://api.github.com/repos/AdguardTeam/SafariConverterLib/releases/latest" |
     grep '"tag_name":' |
     sed -E 's/.*"([^"]+)".*/\1/')
 
+touch ../libs/ConverterTool.json
 echo "{\"version\": \"$LIB_VERSION\"}" > ../libs/ConverterTool.json
 
 # copy scriptlets.js
