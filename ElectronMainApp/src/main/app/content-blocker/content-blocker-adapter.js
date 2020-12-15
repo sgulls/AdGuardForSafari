@@ -15,6 +15,7 @@ const { groupRules, rulesGroupsBundles, filterGroupsBundles } = require('./rule-
  * @type {{updateContentBlocker}}
  */
 module.exports = (function () {
+    const RULES_LIMIT = 50000;
     const DEBOUNCE_PERIOD = 500;
 
     const emptyBlockerJSON = [
@@ -40,12 +41,16 @@ module.exports = (function () {
                 let json = JSON.stringify(emptyBlockerJSON);
 
                 const rulesTexts = group.rules.map((x) => x.ruleText);
+                log.info(`Conversion of ${rules.length} rules started..`);
                 /* eslint-disable-next-line no-await-in-loop */
-                const result = await jsonFromRules(rulesTexts, false, log);
+                const result = await jsonFromRules(rulesTexts, false, RULES_LIMIT);
                 if (result && result.converted && result.converted !== '[]') {
+                    log.info(result?.message);
                     json = result.converted;
                     if (result.overLimit) {
                         overlimit = true;
+                    } else {
+                        log.warn('Unexpected error converting rules');
                     }
                 }
 
@@ -81,7 +86,7 @@ module.exports = (function () {
     const setAdvancedBlocking = async (rules) => {
         let advancedBlocking = '[]';
 
-        const result = await jsonFromRules(rules, true, log);
+        const result = await jsonFromRules(rules, true, RULES_LIMIT);
         if (result && result.advancedBlocking) {
             advancedBlocking = result.advancedBlocking;
         }
