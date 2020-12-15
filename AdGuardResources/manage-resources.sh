@@ -1,23 +1,5 @@
 #!/bin/bash
 
-# build SafariConverterLib
-cd node_modules/safari-converter-lib
-swift build
-cd ../..
-
-# copy ConverterTool to libs
-mkdir -p ../libs
-cp node_modules/safari-converter-lib/.build/debug/ConverterTool ../libs
-chmod +x ../libs/ConverterTool
-
-# get SafariConverterLib version
-LIB_VERSION=$(curl -L "https://api.github.com/repos/AdguardTeam/SafariConverterLib/releases/latest" |
-    grep '"tag_name":' |
-    sed -E 's/.*"([^"]+)".*/\1/')
-
-touch ../libs/ConverterTool.json
-echo "{\"version\": \"$LIB_VERSION\"}" > ../libs/ConverterTool.json
-
 # copy scriptlets.js
 cp node_modules/scriptlets/dist/scriptlets.js ../AdGuard/AdvancedBlocking
 

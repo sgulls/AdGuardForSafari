@@ -1,5 +1,5 @@
 /* eslint-disable-next-line import/no-unresolved */
-const { spawn } = require('child_process');
+const { jsonFromRules } = require('safari-converter-lib');
 const listeners = require('../../notifier');
 const events = require('../../events');
 const settings = require('../settings-manager');
@@ -7,8 +7,6 @@ const antibanner = require('../antibanner');
 const whitelist = require('../whitelist');
 const log = require('../utils/log');
 const concurrent = require('../utils/concurrent');
-const appPack = require('../../../utils/app-pack');
-const app = require('../app');
 const { groupRules, rulesGroupsBundles, filterGroupsBundles } = require('./rule-groups');
 
 /**
@@ -17,7 +15,6 @@ const { groupRules, rulesGroupsBundles, filterGroupsBundles } = require('./rule-
  * @type {{updateContentBlocker}}
  */
 module.exports = (function () {
-    const RULES_LIMIT = 50000;
     const DEBOUNCE_PERIOD = 500;
 
     const emptyBlockerJSON = [
@@ -44,7 +41,7 @@ module.exports = (function () {
 
                 const rulesTexts = group.rules.map((x) => x.ruleText);
                 /* eslint-disable-next-line no-await-in-loop */
-                const result = await jsonFromRules(rulesTexts, false);
+                const result = await jsonFromRules(rulesTexts, false, log);
                 if (result && result.converted && result.converted !== '[]') {
                     json = result.converted;
                     if (result.overLimit) {
@@ -76,80 +73,6 @@ module.exports = (function () {
     };
 
     /**
-     * Runs shell script
-     *
-     * @param command
-     * @param args
-     * @param callback
-     */
-    const runScript = (command, args, callback) => {
-        const child = spawn(command, args);
-
-        let stdout = '';
-        let stderr = '';
-
-        child.stdout.setEncoding('utf8');
-        child.stdout.on('data', (data) => {
-            data = data.toString();
-            stdout += data;
-        });
-
-        child.stderr.setEncoding('utf8');
-        child.stderr.on('data', (data) => {
-            data = data.toString();
-            stderr += data;
-        });
-
-        child.on('close', (code) => {
-            callback(code, stdout, stderr);
-        });
-
-        return child;
-    };
-
-    /**
-     * Runs converter method for rules
-     *
-     * @param rules array of rules
-     * @param advancedBlocking if we need advanced blocking content
-     */
-    const jsonFromRules = async (rules, advancedBlocking) => {
-        log.info(`ConverterTool version: ${app.getConverterVersion()}`);
-        log.info(`Conversion of ${rules.length} rules started..`);
-
-        const toolPath = appPack.resourcePath('../libs/ConverterTool');
-        log.info(`Running converter from: ${toolPath}`);
-
-        return new Promise((resolve) => {
-            const child = runScript(toolPath, [
-                `-limit=${RULES_LIMIT}`,
-                '-optimize=false',
-                `-advancedBlocking=${advancedBlocking}`,
-            ], (code, stdout, stderr) => {
-                if (code !== 0) {
-                    log.warn(`Unexpected error converting rules: ${stderr}`);
-                    resolve();
-                    return;
-                }
-
-                log.info(`Conversion of ${rules.length} rules completed.`);
-                const result = JSON.parse(stdout);
-                log.info(result?.message);
-
-                resolve(result);
-            });
-
-            child.stdin.setEncoding('utf8');
-            for (const r of rules) {
-                child.stdin.write(r);
-                child.stdin.write('\n');
-            }
-
-            child.stdin.end();
-        });
-    };
-
-    /**
      * Activates advanced blocking json
      *
      * @param rules array of rules
@@ -158,7 +81,7 @@ module.exports = (function () {
     const setAdvancedBlocking = async (rules) => {
         let advancedBlocking = '[]';
 
-        const result = await jsonFromRules(rules, true);
+        const result = await jsonFromRules(rules, true, log);
         if (result && result.advancedBlocking) {
             advancedBlocking = result.advancedBlocking;
         }

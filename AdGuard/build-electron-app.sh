@@ -19,14 +19,11 @@ SRC="${SRCROOT}/../ElectronMainApp"
 SHAREDSRC="${SRCROOT}/../Shared"
 
 # Cleaning safari-ext
+cd "${SHAREDSRC}"
 if [[ ${ACTION} == "clean" ]]; then
-  node-gyp clean || exit 1 --cwd "${SHAREDSRC}"
+  node-gyp clean || exit 1
   exit 0
 fi
-
-# Rebuild safari-ext
-#node-gyp configure --verbose --debug|| exit 1 --cwd "${SRC}/safari-ext"
-#node-gyp rebuild --verbose|| exit 1 --cwd "${SRC}/safari-ext"
 
 mkdir -vp "${SRC}/safari-ext/shared"
 cp -v "${BUILT_PRODUCTS_DIR}/libshared.a" "${SRC}/safari-ext/shared/" || exit 1

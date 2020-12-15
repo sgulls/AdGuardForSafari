@@ -37,3 +37,13 @@ Launch application via `yarn start` and open menu `View -> Toggle Developer Tool
 Launch application via `yarn inspect` and open URI `chrome://inspect` in Chrome
 
 Then add network target `localhost:5858` via button 'Configure' and select this target below.
+
+## Safari Converter
+
+After dependency installation the build process of the Safari Converter Lib will occur and binary file will be copied to bin directory
+
+#### Safari Converter API
+`jsonFromRules(rules, advancedBlocking, log)` - method to convert rules into JSON
+* `rules` - array of rules
+* `advancedBlocking` - if we need advanced blocking content (boolean)
+* `log` - logger
