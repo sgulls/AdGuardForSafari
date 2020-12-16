@@ -7,6 +7,10 @@ yarn-error.log
 ElectronMainApp/safari-ext/shared/*
 *.a
 
+AdGuard/AdvancedBlocking/extended-css.js
+AdGuard/AdvancedBlocking/scriptlets.js
+AdGuard/Extension/assistant.embedded.js
+
 # -------------- Xcode.gitignore -------------------
 
 ## Build generated
@@ -31,7 +35,3 @@ xcuserdata/
 
 ## Private data
 private
-
-# Libs
-libs/ConverterTool
-libs/ConverterTool.json

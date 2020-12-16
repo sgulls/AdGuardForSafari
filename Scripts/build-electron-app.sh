@@ -19,8 +19,8 @@ SRC="${SRCROOT}/../ElectronMainApp"
 SHAREDSRC="${SRCROOT}/../Shared"
 
 # Cleaning safari-ext
-cd "${SHAREDSRC}"
 if [[ ${ACTION} == "clean" ]]; then
+  cd "${SHAREDSRC}"
   node-gyp clean || exit 1
   exit 0
 fi
