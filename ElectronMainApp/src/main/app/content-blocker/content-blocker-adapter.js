@@ -1,5 +1,5 @@
 /* eslint-disable-next-line import/no-unresolved */
-const { jsonFromRules } = require('safari-converter-lib');
+const { jsonFromRules, getConverterVersion } = require('safari-converter-lib');
 const listeners = require('../../notifier');
 const events = require('../../events');
 const settings = require('../settings-manager');
@@ -41,6 +41,7 @@ module.exports = (function () {
                 let json = JSON.stringify(emptyBlockerJSON);
 
                 const rulesTexts = group.rules.map((x) => x.ruleText);
+                log.info(`ConverterTool version: ${getConverterVersion()}`);
                 log.info(`Conversion of ${rules.length} rules started..`);
                 /* eslint-disable-next-line no-await-in-loop */
                 const result = await jsonFromRules(rulesTexts, false, RULES_LIMIT);
@@ -49,9 +50,9 @@ module.exports = (function () {
                     json = result.converted;
                     if (result.overLimit) {
                         overlimit = true;
-                    } else {
-                        log.warn('Unexpected error converting rules');
                     }
+                } else {
+                    log.warn('Unexpected error converting rules');
                 }
 
                 const info = {
@@ -86,9 +87,13 @@ module.exports = (function () {
     const setAdvancedBlocking = async (rules) => {
         let advancedBlocking = '[]';
 
+        log.info(`ConverterTool version: ${getConverterVersion()}`);
+        log.info(`Conversion of ${rules.length} rules started..`);
         const result = await jsonFromRules(rules, true, RULES_LIMIT);
         if (result && result.advancedBlocking) {
             advancedBlocking = result.advancedBlocking;
+        } else {
+            log.warn('Unexpected error converting rules');
         }
 
         setSafariContentBlocker(
