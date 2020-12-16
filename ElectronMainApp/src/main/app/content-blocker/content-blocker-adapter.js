@@ -43,27 +43,29 @@ module.exports = (function () {
                 const rulesTexts = group.rules.map((x) => x.ruleText);
                 log.info(`ConverterTool version: ${getConverterVersion()}`);
                 log.info(`Conversion of ${rules.length} rules started..`);
-                /* eslint-disable-next-line no-await-in-loop */
-                const result = await jsonFromRules(rulesTexts, false, RULES_LIMIT);
-                if (result && result.converted && result.converted !== '[]') {
-                    log.info(result?.message);
-                    json = result.converted;
-                    if (result.overLimit) {
-                        overlimit = true;
+                try {
+                    /* eslint-disable-next-line no-await-in-loop */
+                    const result = await jsonFromRules(rulesTexts, false, RULES_LIMIT);
+                    if (result && result.converted && result.converted !== '[]') {
+                        log.info(result?.message);
+                        json = result.converted;
+                        if (result.overLimit) {
+                            overlimit = true;
+                        }
                     }
-                } else {
-                    log.warn('Unexpected error converting rules');
+
+                    const info = {
+                        rulesCount: result ? result.totalConvertedCount : 0,
+                        bundleId: rulesGroupsBundles[group.key],
+                        overlimit: result && result.overLimit,
+                        filterGroups: group.filterGroups,
+                        hasError: false,
+                    };
+
+                    setSafariContentBlocker(rulesGroupsBundles[group.key], json, info);
+                } catch (stderr) {
+                    log.warn(`Unexpected error converting rules: ${stderr}`);
                 }
-
-                const info = {
-                    rulesCount: result ? result.totalConvertedCount : 0,
-                    bundleId: rulesGroupsBundles[group.key],
-                    overlimit: result && result.overLimit,
-                    filterGroups: group.filterGroups,
-                    hasError: false,
-                };
-
-                setSafariContentBlocker(rulesGroupsBundles[group.key], json, info);
             }
 
             const advancedBlockingRulesCount = await setAdvancedBlocking(rules.map((x) => x.ruleText));
@@ -89,20 +91,25 @@ module.exports = (function () {
 
         log.info(`ConverterTool version: ${getConverterVersion()}`);
         log.info(`Conversion of ${rules.length} rules started..`);
-        const result = await jsonFromRules(rules, true, RULES_LIMIT);
-        if (result && result.advancedBlocking) {
-            advancedBlocking = result.advancedBlocking;
-        } else {
-            log.warn('Unexpected error converting rules');
+        try {
+            const result = await jsonFromRules(rules, true, RULES_LIMIT)
+                .catch((stderr) => {
+                    log.warn(`Unexpected error converting rules: ${stderr}`);
+                });
+            if (result && result.advancedBlocking) {
+                advancedBlocking = result.advancedBlocking;
+            }
+
+            setSafariContentBlocker(
+                rulesGroupsBundles['advancedBlocking'],
+                advancedBlocking,
+                { rulesCount: result ? result.totalConvertedCount : 0 }
+            );
+
+            return result ? result.advancedBlockingConvertedCount : 0;
+        } catch (stderr) {
+            log.warn(`Unexpected error converting rules: ${stderr}`);
         }
-
-        setSafariContentBlocker(
-            rulesGroupsBundles['advancedBlocking'],
-            advancedBlocking,
-            { rulesCount: result ? result.totalConvertedCount : 0 }
-        );
-
-        return result ? result.advancedBlockingConvertedCount : 0;
     };
 
     /**
