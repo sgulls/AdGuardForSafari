@@ -1224,7 +1224,7 @@
 /* Begin PBXLegacyTarget section */
 		652169F321231A2300ABF7D0 /* BuildElectronApp */ = {
 			isa = PBXLegacyTarget;
-			buildArgumentsString = "$(SRCROOT)/build-electron-app.sh $(ACTION)";
+			buildArgumentsString = "$(SRCROOT)/../Scripts/build-electron-app.sh $(ACTION)";
 			buildConfigurationList = 652169F421231A2300ABF7D0 /* Build configuration list for PBXLegacyTarget "BuildElectronApp" */;
 			buildPhases = (
 			);
