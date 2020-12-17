@@ -7,6 +7,8 @@ yarn-error.log
 ElectronMainApp/safari-ext/shared/*
 *.a
 
+
+# the following libs are downloaded and copied to their extensions folders by AdGuardResources postinstall script
 AdGuard/AdvancedBlocking/extended-css.js
 AdGuard/AdvancedBlocking/scriptlets.js
 AdGuard/Extension/assistant.embedded.js
