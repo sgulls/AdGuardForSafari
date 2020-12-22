@@ -449,6 +449,8 @@ const WhiteListFilter = function (options) {
     });
 
     const changeDefaultWhiteListModeCheckbox = document.querySelector('#changeDefaultWhiteListMode');
+    const whiteListEditor = document.querySelector('#whiteListRules > textarea');
+    const applyChangesBtn = document.querySelector('#whiteListFilterApplyChanges');
 
     let hasContent = false;
     function loadWhiteListDomains() {
@@ -458,10 +460,8 @@ const WhiteListFilter = function (options) {
         /* eslint-disable-next-line no-unused-vars */
         hasContent = !!response.content;
         editor.setValue(response.content || '', 1);
+        applyChangesBtn.classList.add('disabled');
     }
-
-    const whiteListEditor = document.querySelector('#whiteListRules > textarea');
-    const applyChangesBtn = document.querySelector('#whiteListFilterApplyChanges');
 
     applyChangesBtn.onclick = (event) => {
         event.preventDefault();
@@ -497,6 +497,7 @@ const WhiteListFilter = function (options) {
     const session = editor.getSession();
 
     session.addEventListener('change', () => {
+        applyChangesBtn.classList.remove('disabled');
         if (session.getValue().length > 0) {
             exportAllowlistBtn.classList.remove('disabled');
         } else {
@@ -555,7 +556,10 @@ const UserFilter = function () {
     editor.session.setMode('ace/mode/adguard');
     editor.setOption('wrap', true);
 
+    const userRulesEditor = document.querySelector('#userRules > textarea');
+    const applyChangesBtn = document.querySelector('#userFilterApplyChanges');
     const saveIndicatorElement = document.querySelector('#userRulesSaveIndicator');
+
     const saver = new Saver({
         editor,
         saveEventType: 'saveUserRules',
@@ -572,11 +576,9 @@ const UserFilter = function () {
             /* eslint-disable-next-line no-unused-vars */
             hasContent = !!arg.content;
             editor.setValue(arg.content || '', 1);
+            applyChangesBtn.classList.add('disabled');
         });
     }
-
-    const userRulesEditor = document.querySelector('#userRules > textarea');
-    const applyChangesBtn = document.querySelector('#userFilterApplyChanges');
 
     applyChangesBtn.onclick = (event) => {
         event.preventDefault();
@@ -604,6 +606,7 @@ const UserFilter = function () {
     const session = editor.getSession();
 
     session.addEventListener('change', () => {
+        applyChangesBtn.classList.remove('disabled');
         if (session.getValue().length > 0) {
             exportUserFiltersBtn.classList.remove('disabled');
         } else {
@@ -2162,6 +2165,20 @@ PageController.prototype = {
             body.style.overflow = 'auto';
             onBoardingScreenEl.style.display = 'none';
             window.sessionStorage.setItem(hideOnboardingScreenKey, true);
+        });
+
+        const onboardingLink = document.querySelector('#onboarding-link');
+        const onboardingTooltip = document.querySelector('#onboarding-tooltip');
+        const onboardingPic = document.querySelector('#onboarding-pic');
+        onboardingLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (onboardingTooltip.classList.contains('onboarding__tooltip__visible')) {
+                onboardingTooltip.classList.remove('onboarding__tooltip__visible');
+                onboardingPic.classList.add('onboarding__pic__visible');
+            } else {
+                onboardingTooltip.classList.add('onboarding__tooltip__visible');
+                onboardingPic.classList.remove('onboarding__pic__visible');
+            }
         });
 
         const enableExtensionsNotificationClose = document.getElementById('enableExtensionsNotificationClose');
