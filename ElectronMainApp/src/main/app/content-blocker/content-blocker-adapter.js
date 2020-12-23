@@ -7,6 +7,7 @@ const antibanner = require('../antibanner');
 const whitelist = require('../whitelist');
 const log = require('../utils/log');
 const concurrent = require('../utils/concurrent');
+const appPack = require('../../../utils/app-pack');
 const { groupRules, rulesGroupsBundles, filterGroupsBundles } = require('./rule-groups');
 
 /**
@@ -38,7 +39,13 @@ module.exports = (function () {
         try {
             log.info(`ConverterTool version: ${getConverterVersion()}`);
             log.info(`Conversion of ${rules.length} rules started..`);
-            const result = await jsonFromRules(rules, advancedBlocking, RULES_LIMIT);
+
+            const baseDir = appPack.resourcePath('./');
+            log.info(`Base: ${baseDir}`);
+            const converterLibModuleDir = appPack.resourcePath('./node_modules/safari-converter-lib/');
+            log.info(`converterLibModuleDir: ${converterLibModuleDir}`);
+
+            const result = await jsonFromRules(rules, advancedBlocking, RULES_LIMIT, converterLibModuleDir);
             return result;
         } catch (e) {
             log.error(`Unexpected error converting rules: ${e}`);
