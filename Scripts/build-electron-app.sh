@@ -50,8 +50,8 @@ ELECTRON_VERSION=${ELECTRON_VERSION#"^"}
 yarn electron-rebuild -v ${ELECTRON_VERSION}
 
 echo "Processing ConverterTool"
-install_name_tool -add_rpath @executable_path/../Frameworks "${SRC}/node_modules/safari-converter-lib/bin/ConverterTool" > /dev/null 2>&1 | echo -n
-install_name_tool -add_rpath @executable_path/../../Frameworks "${SRC}/node_modules/safari-converter-lib/bin/ConverterTool" > /dev/null 2>&1 | echo -n
+install_name_tool -add_rpath @executable_path/../Frameworks "${SRC}/../libs/ConverterTool" > /dev/null 2>&1 | echo -n
+install_name_tool -add_rpath @executable_path/../../Frameworks "${SRC}/../libs/ConverterTool" > /dev/null 2>&1 | echo -n
 
 if [[ ${CONFIGURATION} == "Release" ]]; then
     echo "Building release MAS version"
@@ -85,7 +85,7 @@ if [[ ${CONFIGURATION} == "Release" ]]; then
 else
 
     codesign --verbose --force --deep -o runtime --timestamp --sign "${CODE_SIGN_IDENTITY}" --entitlements "${AG_APP_ENT}" "${SRC}/node_modules/safari-ext/build/Release/safari_ext_addon.node"
-    codesign --verbose --force --deep -o runtime --timestamp --sign "${CODE_SIGN_IDENTITY}" --entitlements "${AG_APP_ENT}" "${SRC}/node_modules/safari-converter-lib/bin/ConverterTool" || exit 1
+    codesign --verbose --force --deep -o runtime --timestamp --sign "${CODE_SIGN_IDENTITY}" --entitlements "${AG_APP_ENT}" "${SRC}/../libs/ConverterTool" || exit 1
 
     PACKAGER_PLATFORM="mas"
     if [[ ${AG_STANDALONE} == "true" ]]; then

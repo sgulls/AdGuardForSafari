@@ -7609,9 +7609,8 @@ rsvp@^4.8.4:
   resolved "https://registry.yarnpkg.com/rsvp/-/rsvp-4.8.5.tgz#c8f155311d167f68f21e168df71ec5b083113734"
   integrity sha512-nfMOlASu9OnRJo1mbEk2cz0D56a1MBNrJ7orjRZQG10XDyuvwksKbuXNp6qa+kbn839HwjwhBzhFmdsaEAfauA==
 
-"safari-converter-lib@git+https://github.com/AdguardTeam/SafariConverterLib.git#83c2d3c":
+safari-converter-lib@../../safari-converter:
   version "1.1.5"
-  resolved "git+https://github.com/AdguardTeam/SafariConverterLib.git#83c2d3c32911b6f365e71ba486c6e88f76314822"
 
 safari-ext@./safari-ext:
   version "1.0.32"

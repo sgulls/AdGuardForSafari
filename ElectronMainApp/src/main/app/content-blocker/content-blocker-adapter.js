@@ -1,5 +1,6 @@
 /* eslint-disable-next-line import/no-unresolved */
 const { jsonFromRules, getConverterVersion } = require('safari-converter-lib');
+const { resourcePath } = require('../../../utils/app-pack');
 const listeners = require('../../notifier');
 const events = require('../../events');
 const settings = require('../settings-manager');
@@ -38,7 +39,10 @@ module.exports = (function () {
         try {
             log.info(`ConverterTool version: ${getConverterVersion()}`);
             log.info(`Conversion of ${rules.length} rules started..`);
-            const result = await jsonFromRules(rules, advancedBlocking, RULES_LIMIT);
+            const converterPath = resourcePath('../libs/ConverterTool');
+            log.info(`CONVERTER PATH: ${converterPath}`);
+
+            const result = await jsonFromRules(rules, advancedBlocking, RULES_LIMIT, converterPath);
             return result;
         } catch (e) {
             log.error(`Unexpected error converting rules: ${e}`);

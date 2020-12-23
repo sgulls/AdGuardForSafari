@@ -18,6 +18,7 @@ AdGuard/Extension/assistant.embedded.js
 ## Build generated
 build/
 DerivedData/
+libs/
 
 ## Various settings
 *.pbxuser

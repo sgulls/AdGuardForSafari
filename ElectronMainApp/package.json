@@ -15,7 +15,8 @@
         "download-locales": "gulp download-locales",
         "rebuild-locales": "gulp rebuild-locales",
         "electron-rebuild": "electron-rebuild",
-        "lint": "eslint ./src/main"
+        "lint": "eslint ./src/main",
+        "postinstall": "./tasks/copy-converter.sh"
     },
     "husky": {
         "hooks": {
@@ -34,7 +35,7 @@
         "i18n": "^0.8.3",
         "request-promise": "^4.2.2",
         "safari-ext": "./safari-ext",
-        "safari-converter-lib": "git+https://github.com/AdguardTeam/SafariConverterLib.git#83c2d3c",
+        "safari-converter-lib": "../../safari-converter",
         "xmlhttprequest": "^1.8.0"
     },
     "devDependencies": {
