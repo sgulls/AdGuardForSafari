@@ -50,6 +50,7 @@
 		65975C9621481540007F766E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65975C9321481540007F766E /* Assets.xcassets */; };
 		65975C9D2148266C007F766E /* toolbar-on.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 65975C9C2148266C007F766E /* toolbar-on.pdf */; };
 		65975CA021484E13007F766E /* GreenButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65975C9F21484E13007F766E /* GreenButtonCell.m */; };
+		65C8B03C2146635C00B2E7FD /* assistant.embedded.js in Resources */ = {isa = PBXBuildFile; fileRef = 65C8B03B2146635B00B2E7FD /* assistant.embedded.js */; };
 		65C8B03E21467AF500B2E7FD /* assistant.runner.js in Resources */ = {isa = PBXBuildFile; fileRef = 65C8B03D21467AF500B2E7FD /* assistant.runner.js */; };
 		65D151842139771A0014BE79 /* defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65D151832139771A0014BE79 /* defaults.plist */; };
 		65D151852139771A0014BE79 /* defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65D151832139771A0014BE79 /* defaults.plist */; };
@@ -109,6 +110,7 @@
 		F424E5C6238C3E5A00C89E45 /* blocker-content-rules-empty.json in Resources */ = {isa = PBXBuildFile; fileRef = F4581BF322F8A2430069FA94 /* blocker-content-rules-empty.json */; };
 		F424E5C7238C3E5B00C89E45 /* blocker-content-rules-empty.json in Resources */ = {isa = PBXBuildFile; fileRef = F4581BF322F8A2430069FA94 /* blocker-content-rules-empty.json */; };
 		F424E5C8238C3E5C00C89E45 /* blocker-content-rules-empty.json in Resources */ = {isa = PBXBuildFile; fileRef = F4581BF322F8A2430069FA94 /* blocker-content-rules-empty.json */; };
+		F44937BC2291D72500BAEFED /* scriptlets.js in Resources */ = {isa = PBXBuildFile; fileRef = F44937BB2291D72500BAEFED /* scriptlets.js */; };
 		F4581B6E22F363960069FA94 /* AEContentBlockerRequestHandlerBase.h in Headers */ = {isa = PBXBuildFile; fileRef = F4581B6D22F363960069FA94 /* AEContentBlockerRequestHandlerBase.h */; };
 		F4581B7022F364AA0069FA94 /* AEContentBlockerRequestHandlerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = F4581B6F22F364AA0069FA94 /* AEContentBlockerRequestHandlerBase.m */; };
 		F4581B7522F36F720069FA94 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F4581B7722F36F720069FA94 /* InfoPlist.strings */; };
@@ -137,6 +139,7 @@
 		F4D590152201C8F8002DCC2C /* ContentBlockerContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D590142201C8F8002DCC2C /* ContentBlockerContainer.swift */; };
 		F4D5901D2201C965002DCC2C /* AdvancedBlockingUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D5901C2201C965002DCC2C /* AdvancedBlockingUnitTests.swift */; };
 		F4D590242201D097002DCC2C /* ContentBlockerContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D590142201C8F8002DCC2C /* ContentBlockerContainer.swift */; };
+		F4F479FC221A05B600A68681 /* extended-css.js in Resources */ = {isa = PBXBuildFile; fileRef = F4F479FB221A05B600A68681 /* extended-css.js */; };
 		F4FE881B220CCF4200B79CBE /* AESharedResources.m in Sources */ = {isa = PBXBuildFile; fileRef = 655C8629212AE6C200CB6DAE /* AESharedResources.m */; };
 		F4FE881C220CCF4400B79CBE /* AESharedResources.m in Sources */ = {isa = PBXBuildFile; fileRef = 655C8629212AE6C200CB6DAE /* AESharedResources.m */; };
 		F4FE881F220CCF9B00B79CBE /* ACLWildcard.m in Sources */ = {isa = PBXBuildFile; fileRef = 655C8633212AEA3200CB6DAE /* ACLWildcard.m */; };
@@ -1683,6 +1686,7 @@
 			files = (
 				65C8B03E21467AF500B2E7FD /* assistant.runner.js in Resources */,
 				6535D712213D4374004D8A08 /* Localizable.strings in Resources */,
+				65C8B03C2146635C00B2E7FD /* assistant.embedded.js in Resources */,
 				65975C9D2148266C007F766E /* toolbar-on.pdf in Resources */,
 				65216A0D212436EA00ABF7D0 /* SafariExtensionViewController.xib in Resources */,
 				65D151852139771A0014BE79 /* defaults.plist in Resources */,
@@ -1732,6 +1736,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			    F4F479FC221A05B600A68681 /* extended-css.js in Resources */,
+                F44937BC2291D72500BAEFED /* scriptlets.js in Resources */,
 				F49E3FE6221F4D72001B9E86 /* InfoPlist.strings in Resources */,
 				F41DA7E52201C81700C63708 /* script.js in Resources */,
 			);
