@@ -9,9 +9,6 @@ echo "AG_STANDALONE_BETA: ${AG_STANDALONE_BETA}"
 . ~/.nvm/nvm.sh
 nvm use v13.10.0 || exit 1
 
-# download AdGuard resources
-yarn install --cwd "${SRCROOT}/../AdGuardResources"
-
 PLATFORM=mas
 ARCH=x64
 

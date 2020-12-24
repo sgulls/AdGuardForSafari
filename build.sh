@@ -58,6 +58,10 @@ fi
 
 echo "Step 1: Building the app archive"
 rm -Rf "$ARCHIVE_PATH"
+
+# download AdGuard resources
+yarn install --cwd "${BUILD_DIR}/../AdGuardResources"
+
 xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" clean
 xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" archive -configuration "$CONFIGURATION_NAME" -archivePath "$ARCHIVE_PATH"
 
