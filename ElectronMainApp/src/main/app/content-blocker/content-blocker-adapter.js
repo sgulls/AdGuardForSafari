@@ -79,7 +79,7 @@ module.exports = (function () {
                     bundleId: rulesGroupsBundles[group.key],
                     overlimit: result && result.overLimit,
                     filterGroups: group.filterGroups,
-                    hasError: false,
+                    hasError: !result,
                 };
 
                 setSafariContentBlocker(rulesGroupsBundles[group.key], json, info);
