@@ -10,6 +10,8 @@ const log = require('../utils/log');
 const concurrent = require('../utils/concurrent');
 const { groupRules, rulesGroupsBundles, filterGroupsBundles } = require('./rule-groups');
 
+const CONVERTER_TOOL_PATH = '../libs/ConverterTool';
+
 /**
  * Safari Content Blocker Adapter
  *
@@ -39,7 +41,7 @@ module.exports = (function () {
         try {
             log.info(`ConverterTool version: ${getConverterVersion()}`);
             log.info(`Conversion of ${rules.length} rules started..`);
-            const converterPath = resourcePath('../libs/ConverterTool');
+            const converterPath = resourcePath(CONVERTER_TOOL_PATH);
             log.info(`CONVERTER PATH: ${converterPath}`);
 
             const result = await jsonFromRules(rules, advancedBlocking, RULES_LIMIT, converterPath);
