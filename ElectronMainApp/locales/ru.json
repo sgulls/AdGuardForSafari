@@ -210,7 +210,7 @@
         "message": "Инвертировать белый список<span class='sp-table-row-info'>Разблокировать рекламу на всех сайтах, <i>кроме</i> добавленных в белый список</span>"
     },
     "options_userfilter": {
-        "message": "Пользовательские правила"
+        "message": "Редактор"
     },
     "options_userfilter_import": {
         "message": "Импорт"
