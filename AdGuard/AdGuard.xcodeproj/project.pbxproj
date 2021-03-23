@@ -2384,7 +2384,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				DEVELOPMENT_TEAM = 8798JKH4Z8;
 				INFOPLIST_FILE = AdGuardTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2394,6 +2394,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = com.adguard.safari.AdGuardTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Advanced Blocking/AdGuardTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
@@ -2408,7 +2409,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				DEVELOPMENT_TEAM = 8798JKH4Z8;
 				INFOPLIST_FILE = AdGuardTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2418,6 +2419,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = com.adguard.safari.AdGuardTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Advanced Blocking/AdGuardTests-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 			};
@@ -2454,6 +2456,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Extension/Extension.entitlements;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8798JKH4Z8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Extension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2463,6 +2468,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "$(AG_EXTENSION_BUNDLEID)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Extension/AdGuardSafariExtension-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -2476,8 +2482,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Extension/Extension.entitlements;
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
-				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8798JKH4Z8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Extension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2487,6 +2494,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "$(AG_EXTENSION_BUNDLEID)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Extension/AdGuardSafariExtension-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
@@ -2496,7 +2504,7 @@
 		652735B8212D77A3005C35BF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N33TQXN8C7;
 				EXCLUDED_ARCHS = "";
@@ -2511,7 +2519,7 @@
 		652735B9212D77A3005C35BF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N33TQXN8C7;
 				EXCLUDED_ARCHS = "";
@@ -2527,7 +2535,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F46D132C225E946500282566 /* standalone-beta.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -2559,7 +2567,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "$(AG_SIGN)";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -2590,7 +2598,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 657215562121F30600B2381C /* Config.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -2622,7 +2630,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "$(AG_SIGN)";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -2650,8 +2658,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "$(AG_APP_ENT)";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				DEVELOPMENT_TEAM = 8798JKH4Z8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_EXPAND_BUILD_SETTINGS = YES;
 				INFOPLIST_FILE = AdGuard/Info.plist;
@@ -2677,9 +2687,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "$(AG_APP_ENT)";
-				CODE_SIGN_IDENTITY = "Apple Distribution";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				DEVELOPMENT_TEAM = 8798JKH4Z8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_EXPAND_BUILD_SETTINGS = YES;
 				INFOPLIST_FILE = AdGuard/Info.plist;
@@ -2702,7 +2713,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BlockerExtension/BlockerExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 8798JKH4Z8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = BlockerExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2722,9 +2735,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BlockerExtension/BlockerExtension.entitlements;
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				DEVELOPMENT_TEAM = 8798JKH4Z8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = BlockerExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2744,7 +2757,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "AdGuard Login Helper/AdGuard_Login_Helper.entitlements";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 8798JKH4Z8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "AdGuard Login Helper/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2755,6 +2771,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(AG_LOGIN_HELPER_BUNDLEID)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -2764,9 +2781,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "AdGuard Login Helper/AdGuard_Login_Helper.entitlements";
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				DEVELOPMENT_TEAM = 8798JKH4Z8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "AdGuard Login Helper/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2776,6 +2794,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(AG_LOGIN_HELPER_BUNDLEID)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -2785,7 +2804,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "AdGuard Login Helper/AdGuard_Login_Helper.entitlements";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 8798JKH4Z8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "AdGuard Login Helper/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2795,6 +2817,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(AG_LOGIN_HELPER_BUNDLEID)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 			};
 			name = "Standalone Beta";
@@ -2804,7 +2827,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "AdGuard Login Helper/AdGuard_Login_Helper.entitlements";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 8798JKH4Z8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "AdGuard Login Helper/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2814,6 +2840,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(AG_LOGIN_HELPER_BUNDLEID)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 			};
 			name = "Standalone Prod";
@@ -2823,9 +2850,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BlockerSocialExtension/BlockerSocialExtension.entitlements;
-				CODE_SIGN_IDENTITY = "$(AG_SIGN)";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8798JKH4Z8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = BlockerSocialExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2848,9 +2875,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BlockerSocialExtension/BlockerSocialExtension.entitlements;
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				DEVELOPMENT_TEAM = 8798JKH4Z8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = BlockerSocialExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2872,9 +2899,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BlockerSocialExtension/BlockerSocialExtension.entitlements;
-				CODE_SIGN_IDENTITY = "$(AG_SIGN)";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8798JKH4Z8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = BlockerSocialExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2896,9 +2923,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BlockerSocialExtension/BlockerSocialExtension.entitlements;
-				CODE_SIGN_IDENTITY = "$(AG_SIGN)";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8798JKH4Z8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = BlockerSocialExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2920,9 +2947,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BlockerPrivacyExtension/BlockerPrivacyExtension.entitlements;
-				CODE_SIGN_IDENTITY = "$(AG_SIGN)";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8798JKH4Z8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = BlockerPrivacyExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2945,9 +2972,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BlockerPrivacyExtension/BlockerPrivacyExtension.entitlements;
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				DEVELOPMENT_TEAM = 8798JKH4Z8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = BlockerPrivacyExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2969,9 +2996,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BlockerPrivacyExtension/BlockerPrivacyExtension.entitlements;
-				CODE_SIGN_IDENTITY = "$(AG_SIGN)";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8798JKH4Z8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = BlockerPrivacyExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2993,9 +3020,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BlockerPrivacyExtension/BlockerPrivacyExtension.entitlements;
-				CODE_SIGN_IDENTITY = "$(AG_SIGN)";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8798JKH4Z8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = BlockerPrivacyExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3018,7 +3045,9 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = AdvancedBlocking/AdvancedBlocking.entitlements;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 8798JKH4Z8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = AdvancedBlocking/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3045,9 +3074,9 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = AdvancedBlocking/AdvancedBlocking.entitlements;
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				DEVELOPMENT_TEAM = 8798JKH4Z8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = AdvancedBlocking/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3072,9 +3101,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BlockerSecurityExtension/BlockerSecurityExtension.entitlements;
-				CODE_SIGN_IDENTITY = "$(AG_SIGN)";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8798JKH4Z8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = BlockerSecurityExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3097,9 +3126,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BlockerSecurityExtension/BlockerSecurityExtension.entitlements;
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				DEVELOPMENT_TEAM = 8798JKH4Z8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = BlockerSecurityExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3121,9 +3150,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BlockerSecurityExtension/BlockerSecurityExtension.entitlements;
-				CODE_SIGN_IDENTITY = "$(AG_SIGN)";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8798JKH4Z8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = BlockerSecurityExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3145,9 +3174,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BlockerSecurityExtension/BlockerSecurityExtension.entitlements;
-				CODE_SIGN_IDENTITY = "$(AG_SIGN)";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8798JKH4Z8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = BlockerSecurityExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3168,7 +3197,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F46D132C225E946500282566 /* standalone-beta.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -3200,7 +3229,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "$(AG_SIGN)";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -3228,8 +3257,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "$(AG_APP_ENT)";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				DEVELOPMENT_TEAM = 8798JKH4Z8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_EXPAND_BUILD_SETTINGS = YES;
 				INFOPLIST_FILE = AdGuard/Info.plist;
@@ -3265,6 +3296,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Extension/Extension.entitlements;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 8798JKH4Z8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Extension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3275,6 +3309,7 @@
 				"OTHER_CODE_SIGN_FLAGS[sdk=*]" = "--timestamp";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(AG_EXTENSION_BUNDLEID)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Extension/AdGuardSafariExtension-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
@@ -3286,8 +3321,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BlockerExtension/BlockerExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8798JKH4Z8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = BlockerExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3309,9 +3345,9 @@
 				BUNDLE_LOADER = "";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				DEVELOPMENT_TEAM = 8798JKH4Z8;
 				INFOPLIST_FILE = AdGuardTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3321,6 +3357,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = com.adguard.safari.AdGuardTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Advanced Blocking/AdGuardTests-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 			};
@@ -3347,9 +3384,9 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = AdvancedBlocking/AdvancedBlocking.entitlements;
-				CODE_SIGN_IDENTITY = "$(AG_SIGN)";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8798JKH4Z8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = AdvancedBlocking/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3374,9 +3411,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				DEVELOPMENT_TEAM = 8798JKH4Z8;
 				INFOPLIST_FILE = AdvancedBlockingUnitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3386,6 +3423,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = mizzick.AdvancedBlockingUnitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 4.2;
@@ -3396,7 +3434,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F46D1321225E940B00282566 /* standalone.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -3428,7 +3466,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "$(AG_SIGN)";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -3456,8 +3494,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "$(AG_APP_ENT)";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				DEVELOPMENT_TEAM = 8798JKH4Z8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_EXPAND_BUILD_SETTINGS = YES;
 				INFOPLIST_FILE = AdGuard/Info.plist;
@@ -3493,6 +3533,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Extension/Extension.entitlements;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 8798JKH4Z8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Extension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3503,6 +3546,7 @@
 				"OTHER_CODE_SIGN_FLAGS[sdk=*]" = "--timestamp";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(AG_EXTENSION_BUNDLEID)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Extension/AdGuardSafariExtension-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
@@ -3514,8 +3558,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BlockerExtension/BlockerExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8798JKH4Z8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = BlockerExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3537,9 +3582,9 @@
 				BUNDLE_LOADER = "";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				DEVELOPMENT_TEAM = 8798JKH4Z8;
 				INFOPLIST_FILE = AdGuardTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3549,6 +3594,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = com.adguard.safari.AdGuardTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Advanced Blocking/AdGuardTests-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 			};
@@ -3575,9 +3621,9 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = AdvancedBlocking/AdvancedBlocking.entitlements;
-				CODE_SIGN_IDENTITY = "$(AG_SIGN)";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8798JKH4Z8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = AdvancedBlocking/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3602,9 +3648,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				DEVELOPMENT_TEAM = 8798JKH4Z8;
 				INFOPLIST_FILE = AdvancedBlockingUnitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3614,6 +3660,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = mizzick.AdvancedBlockingUnitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 4.2;
@@ -3625,9 +3672,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BlockerOtherExtension/BlockerOtherExtension.entitlements;
-				CODE_SIGN_IDENTITY = "$(AG_SIGN)";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8798JKH4Z8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = BlockerOtherExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3650,9 +3697,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BlockerOtherExtension/BlockerOtherExtension.entitlements;
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				DEVELOPMENT_TEAM = 8798JKH4Z8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = BlockerOtherExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3674,9 +3721,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BlockerOtherExtension/BlockerOtherExtension.entitlements;
-				CODE_SIGN_IDENTITY = "$(AG_SIGN)";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8798JKH4Z8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = BlockerOtherExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3698,9 +3745,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BlockerOtherExtension/BlockerOtherExtension.entitlements;
-				CODE_SIGN_IDENTITY = "$(AG_SIGN)";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8798JKH4Z8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = BlockerOtherExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3722,9 +3769,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BlockerCustomExtension/BlockerCustomExtension.entitlements;
-				CODE_SIGN_IDENTITY = "$(AG_SIGN)";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8798JKH4Z8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = BlockerCustomExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3747,9 +3794,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BlockerCustomExtension/BlockerCustomExtension.entitlements;
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				DEVELOPMENT_TEAM = 8798JKH4Z8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = BlockerCustomExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3771,9 +3818,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BlockerCustomExtension/BlockerCustomExtension.entitlements;
-				CODE_SIGN_IDENTITY = "$(AG_SIGN)";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8798JKH4Z8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = BlockerCustomExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3795,9 +3842,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BlockerCustomExtension/BlockerCustomExtension.entitlements;
-				CODE_SIGN_IDENTITY = "$(AG_SIGN)";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8798JKH4Z8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = BlockerCustomExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3818,9 +3865,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				DEVELOPMENT_TEAM = 8798JKH4Z8;
 				INFOPLIST_FILE = AdvancedBlockingUnitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3831,6 +3878,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = mizzick.AdvancedBlockingUnitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
@@ -3841,9 +3889,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = TC3Q7MAJXF;
+				DEVELOPMENT_TEAM = 8798JKH4Z8;
 				INFOPLIST_FILE = AdvancedBlockingUnitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3853,6 +3901,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = mizzick.AdvancedBlockingUnitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 4.2;

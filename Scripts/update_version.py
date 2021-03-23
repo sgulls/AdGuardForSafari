@@ -24,20 +24,20 @@ def updateVersion(path, channel, version):
     except json.decoder.JSONDecodeError:
         print("Creating new json file..")
         config_json = {
-            "darwin-x64-prod":
+            "darwin-arm64-prod":
                 {"readme": "Standalone release",
                  "update": "https://adguardteam.github.io/AdGuardForSafari/release/release.json",
                  "install": "https://static.adguard.com/safari/release/AdGuard_Safari.app.zip",
                  "version": "1.4.1"},
-            "darwin-x64-beta": {
+            "darwin-arm64-beta": {
                 "readme": "Standalone beta",
                 "update": "https://adguardteam.github.io/AdGuardForSafari/beta/release.json",
                 "install": "https://static.adguard.com/safari/beta/AdGuard_Safari_Beta.app.zip",
                 "version": "1.4.1"}
         }
 
-    prodConfig = config_json["darwin-x64-prod"]
-    betaConfig = config_json["darwin-x64-beta"]
+    prodConfig = config_json["darwin-arm64-prod"]
+    betaConfig = config_json["darwin-arm64-beta"]
 
     if channel == "release":
         prodConfig["version"] = version

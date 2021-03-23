@@ -5,7 +5,7 @@
 	<key>method</key>
     <string>app-store</string>
     <key>teamID</key>
-    <string>TC3Q7MAJXF</string>
+    <string>8798JKH4Z8</string>
     <key>destination</key>
     <string>upload</string>
     <key>uploadBitcode</key>
@@ -17,8 +17,8 @@
     <key>signingStyle</key>
     <string>manual</string>
     <key>installerSigningCertificate</key>
-    <string>3rd Party Mac Developer Installer: Adguard Software Limited (TC3Q7MAJXF)</string>
+    <string>Developer ID Installer: Joojin Abaoag (8798JKH4Z8)</string>
     <key>signingCertificate</key>
-    <string>Mac App Distribution</string>
+    <string>Developer ID Application</string>
 </dict>
 </plist>
