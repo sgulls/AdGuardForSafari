@@ -12,7 +12,7 @@ from optparse import OptionParser
 # Configuration
 #
 NOTARY_TIMEOUT = 60 * 30  # we will wait up to 30 minutes until notarization succeeds
-DEVELOPMENT_TEAM = "TC3Q7MAJXF"  # Adguard Software Ltd.
+DEVELOPMENT_TEAM = "8798JKH4Z8"  
 DEVCONFIG_PATH = ".devconfig.json"
 
 #
